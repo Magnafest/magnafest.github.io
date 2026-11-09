@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnafest 2027 | ECFG satellite conference, Helsinki</title>
+<meta name="description" content="Magnafest is a one-day ECFG satellite conference on Magnaporthe species. Sunday 7 March 2027, Hotel Arthur, Helsinki.">
+<link rel="canonical" href="https://magnafest.github.io/">
+
+<!-- Link preview (Bluesky, Slack, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://magnafest.github.io/">
+<meta property="og:title" content="Magnafest 2027">
+<meta property="og:description" content="One-day ECFG satellite conference on Magnaporthe species. Sunday 7 March 2027, Hotel Arthur, Helsinki.">
+<meta property="og:image" content="https://magnafest.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Magnafest 2027. One-day ECFG satellite conference. Sunday 7 March 2027, Hotel Arthur, Helsinki.">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#E9EFE4">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ground: #E9EFE4;
+    --ink: #16301F;
+    --body: #34503E;
+    --muted: #4F6A58;
+    --leaf: #6E9659;
+    --rule: #E4EBE0;
+    --panel: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--ink); }
+  a:hover { color: #2E5039; }
+  a:focus-visible { outline: 3px solid var(--leaf); outline-offset: 3px; border-radius: 4px; }
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 20px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intro" "panel" "org";
+    gap: 28px;
+  }
+  .intro { grid-area: intro; }
+  .panel { grid-area: panel; }
+  .organisers { grid-area: org; }
+
+  /* Wide screens: two columns so the whole page fits without scrolling */
+  @media (min-width: 960px) {
+    main { padding: 32px 48px; }
+    .wrap {
+      max-width: 1140px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-areas: "intro panel" "org panel";
+      grid-template-rows: auto auto;
+      column-gap: 64px;
+      row-gap: 32px;
+      align-items: center;
+    }
+    .intro { align-self: end; }
+    .organisers { align-self: start; padding-top: 0; }
+    .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .intro { display: flex; flex-direction: column; gap: 18px; padding: 0 8px; }
+  h1 {
+    margin: 0;
+    font-size: clamp(44px, 6.5vw, 76px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .lede { margin: 0; font-size: 19px; line-height: 1.6; color: var(--body); max-width: 620px; }
+
+  .panel {
+    background: var(--panel);
+    border-radius: 16px;
+    padding: clamp(20px, 4vw, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .facts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px 32px;
+  }
+  .facts div { display: flex; flex-direction: column; gap: 6px; }
+  .facts dt { font-size: 13px; font-weight: 600; color: var(--muted); }
+  .facts dd { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.45; }
+  .facts .sub { display: block; font-weight: 400; color: var(--body); }
+  .facts .wide { grid-column: 1 / -1; }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+  .action { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    width: 210px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .btn:hover { background: #24452F; color: #FFFFFF; }
+  .action p { margin: 0; flex: 1 1 240px; font-size: 15px; line-height: 1.5; color: var(--body); }
+  .share { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .share a { font-weight: 700; text-underline-offset: 3px; }
+
+  .organisers { display: flex; flex-direction: column; gap: 18px; padding: 8px 8px 0; }
+  h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.015em; }
+  .people {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px 24px;
+  }
+  .people li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 2px solid var(--leaf);
+    padding-top: 12px;
+  }
+  .people .name { font-size: 16px; font-weight: 600; }
+  .people .inst { font-size: 14px; line-height: 1.45; color: var(--muted); }
+  .people a { align-self: flex-start; font-size: 14px; font-weight: 600; text-underline-offset: 3px; padding: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="wrap">
+
+    <div class="intro">
+      <h1>Magnafest 2027</h1>
+    </div>
+
+    <div class="panel">
+      <dl class="facts">
+        <div>
+          <dt>Date</dt>
+          <dd>Sunday 7 March 2027</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>Hotel Arthur, Helsinki</dd>
+        </div>
+        <div class="wide">
+          <dt>Deadline</dt>
+          <dd>Abstracts by 15 December 2026
+            <span class="sub">Decisions by mid-January 2027</span>          </dd>
+        </div>
+      </dl>
+
+      <div class="actions">
+        <div class="action">
+          <a class="btn" href="https://ecfg18.eventsairsite.com/registration">Register via ECFG</a>
+          <p>Select a Magnafest ticket as an add-on during ECFG registration.</p>
+        </div>
+        <div class="action">
+          <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=1O9S5qxdtkGiPXZGNMNs6iW7EsYPdrtKmN5bMLkXB1ZUMzZWMkNURVdNMlhETjlSSVkxRlM3R1U4SS4u">Submit an abstract</a>
+          <p>Magnafest abstract submission is separate to ECFG.</p>
+        </div>
+        <p class="share">Please share online using <a href="https://bsky.app/hashtag/Magnafest2027">#Magnafest2027</a></p>
+      </div>
+    </div>
+
+    <section class="organisers" aria-labelledby="organisers-heading">
+      <h2 id="organisers-heading">Organisers</h2>
+      <!-- Bluesky handles: add a line like this under each person's institute
+           <a href="https://bsky.app/profile/HANDLE.bsky.social">@HANDLE.bsky.social</a> -->
+      <ul class="people">
+        <li>
+          <span class="name">Míriam Osés-Ruiz</span>
+          <span class="inst">Public University of Navarre, ES</span>
+          <a href="https://bsky.app/profile/osesmir.bsky.social">@osesmir.bsky.social</a>
+        </li>
+        <li>
+          <span class="name">Frank Menke</span>
+          <span class="inst">The Sainsbury Laboratory, UK</span>
+          <a href="https://bsky.app/profile/frankmenke.bsky.social">@frankmenke.bsky.social</a>
+        </li>
+        <li>
+          <span class="name">Yvonne Scamarcia</span>
+          <span class="inst">University of Geneva, CH</span>
+        </li>
+        <li>
+          <span class="name">Angus Bucknell</span>
+          <span class="inst">The Sainsbury Laboratory, UK</span>
+          <a href="https://bsky.app/profile/ahbucknell.com">@ahbucknell.com</a>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+</body>
+</html>
